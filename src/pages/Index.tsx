@@ -1,7 +1,9 @@
 import { useRef } from 'react';
 import takeoffLogo from '@/assets/takeoff-logo.png';
 import { Button } from '@/components/ui/button';
-import { Rocket, Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
+import { Rocket, Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp, Boxes, Tag, Search, Shield, Award } from 'lucide-react';
+import WorldMapAnimation from '@/components/WorldMapAnimation';
+import LogisticsAnimation from '@/components/LogisticsAnimation';
 
 const AnimatedOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
   <div 
@@ -23,9 +25,28 @@ const ServiceCard = ({ icon: Icon, title, description, delay }: { icon: any; tit
   </div>
 );
 
+const AchievementCard = ({ icon: Icon, title, description, delay }: { icon: any; title: string; description: string; delay: number }) => (
+  <div 
+    className="bg-card-gradient border border-border/50 rounded-2xl p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-lg group"
+    style={{ animationDelay: `${delay}ms` }}
+  >
+    <div className="flex items-start gap-4">
+      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
+        <Icon className="w-6 h-6 text-primary" />
+      </div>
+      <div>
+        <h3 className="font-display text-lg font-bold mb-2 text-foreground">{title}</h3>
+        <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const Index = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const brandsRef = useRef<HTMLDivElement>(null);
+  const achievementsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
@@ -36,9 +57,9 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <AnimatedOrb className="orb-green w-96 h-96 -top-48 -right-48" delay={0} />
-        <AnimatedOrb className="orb-amber w-80 h-80 top-1/3 -left-40" delay={2} />
-        <AnimatedOrb className="orb-green-light w-72 h-72 bottom-20 right-1/4" delay={4} />
+        <AnimatedOrb className="orb-purple w-96 h-96 -top-48 -right-48" delay={0} />
+        <AnimatedOrb className="orb-lavender w-80 h-80 top-1/3 -left-40" delay={2} />
+        <AnimatedOrb className="orb-purple-light w-72 h-72 bottom-20 right-1/4" delay={4} />
       </div>
 
       {/* Navigation */}
@@ -48,7 +69,7 @@ const Index = () => {
             <img src={takeoffLogo} alt="Takeoff Exports Logo" className="h-12 w-auto rounded-lg" />
             <span className="font-display font-bold text-xl text-foreground hidden sm:block">Takeoff Exports</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <button 
               onClick={() => scrollToSection(aboutRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
@@ -60,6 +81,18 @@ const Index = () => {
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               Services
+            </button>
+            <button 
+              onClick={() => scrollToSection(brandsRef)} 
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Brands
+            </button>
+            <button 
+              onClick={() => scrollToSection(achievementsRef)} 
+              className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              Achievements
             </button>
             <button 
               onClick={() => scrollToSection(contactRef)} 
@@ -168,6 +201,11 @@ const Index = () => {
             </h2>
           </div>
           
+          {/* World Map Animation */}
+          <div className="mb-16">
+            <WorldMapAnimation />
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCard 
               icon={Package} 
@@ -197,6 +235,83 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Brands Section */}
+      <section ref={brandsRef} className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">~ Our Brands ~</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+              Delivering <span className="text-gradient">Excellence Together</span>
+            </h2>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-card-gradient border border-border/50 rounded-3xl p-12 text-center">
+              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Globe className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">Coming Soon</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We're building partnerships with exceptional brands to bring you the best products from India to the world. Stay tuned for our brand portfolio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section ref={achievementsRef} className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">Achievements</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+              Customers Prefer Us for <span className="text-gradient">Our Specialties</span>
+            </h2>
+            <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
+              We Value Unique and Innovative Client Requirements
+            </p>
+          </div>
+          
+          {/* Logistics Animation */}
+          <div className="mb-12">
+            <LogisticsAnimation />
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <AchievementCard 
+              icon={Boxes} 
+              title="Multi-Product Consolidation Expertise" 
+              description="We specialize in handling complex shipments, managing over 100 different products in a single container or LCL shipment with precision and care."
+              delay={100}
+            />
+            <AchievementCard 
+              icon={Tag} 
+              title="Customized Packaging & Labeling" 
+              description="Tailor-made packaging and labeling solutions designed to meet country-specific regulations and client preferences."
+              delay={200}
+            />
+            <AchievementCard 
+              icon={Search} 
+              title="New & Custom Product Sourcing" 
+              description="Looking for something new or different? Share your product list with us. We identify suitable products at your target price and export them under your brand name."
+              delay={300}
+            />
+            <AchievementCard 
+              icon={Shield} 
+              title="Integrity & Transparency" 
+              description="We are committed to ethical practices, honesty, and complete transparency in every transaction."
+              delay={400}
+            />
+            <AchievementCard 
+              icon={Award} 
+              title="Pursuit of Excellence" 
+              description="Driven by continuous improvement, we strive to enhance our processes, services, and product quality to deliver exceptional value."
+              delay={500}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section ref={contactRef} className="py-24 relative">
         <div className="container mx-auto px-6">
@@ -216,29 +331,29 @@ const Index = () => {
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
-                <a href="mailto:contact@takeoffexports.com" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
+                <a href="mailto:info@takeoffexpoerts.com" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Email Us</span>
-                  <span className="text-foreground font-medium text-sm">contact@takeoffexports.com</span>
+                  <span className="text-foreground font-medium text-sm">info@takeoffexpoerts.com</span>
                 </a>
                 
-                <a href="tel:+919876543210" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
+                <a href="tel:+919677053103" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Call Us</span>
-                  <span className="text-foreground font-medium">+91 98765 43210</span>
+                  <span className="text-foreground font-medium">+91 96770 53103</span>
                 </a>
                 
-                <div className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 group">
-                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
+                <a href="https://maps.app.goo.gl/9Z4d9ay2QE422pVi9" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
+                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Location</span>
-                  <span className="text-foreground font-medium text-center text-sm">India</span>
-                </div>
+                  <span className="text-foreground font-medium text-center text-sm">Tamil Nadu, India</span>
+                </a>
               </div>
               
               <div className="mt-10 text-center">
