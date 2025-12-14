@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import takeoffLogo from '@/assets/takeoff-logo.png';
 import { Button } from '@/components/ui/button';
-import { Plane, Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Rocket, Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
 
 const AnimatedOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
   <div 
@@ -12,21 +12,14 @@ const AnimatedOrb = ({ className, delay = 0 }: { className: string; delay?: numb
 
 const ServiceCard = ({ icon: Icon, title, description, delay }: { icon: any; title: string; description: string; delay: number }) => (
   <div 
-    className="bg-card-gradient border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:-translate-y-2 group"
+    className="bg-card-gradient border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-lg hover:-translate-y-2 group"
     style={{ animationDelay: `${delay}ms` }}
   >
-    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+    <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors duration-300">
       <Icon className="w-7 h-7 text-primary" />
     </div>
     <h3 className="font-display text-xl font-bold mb-3 text-foreground">{title}</h3>
     <p className="text-muted-foreground leading-relaxed">{description}</p>
-  </div>
-);
-
-const StatCard = ({ value, label }: { value: string; label: string }) => (
-  <div className="text-center">
-    <div className="text-4xl md:text-5xl font-display font-bold text-gradient mb-2">{value}</div>
-    <div className="text-muted-foreground text-sm uppercase tracking-wider">{label}</div>
   </div>
 );
 
@@ -43,16 +36,17 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <AnimatedOrb className="orb-gold w-96 h-96 -top-48 -right-48" delay={0} />
-        <AnimatedOrb className="orb-sky w-80 h-80 top-1/3 -left-40" delay={2} />
-        <AnimatedOrb className="orb-sunset w-72 h-72 bottom-20 right-1/4" delay={4} />
+        <AnimatedOrb className="orb-green w-96 h-96 -top-48 -right-48" delay={0} />
+        <AnimatedOrb className="orb-amber w-80 h-80 top-1/3 -left-40" delay={2} />
+        <AnimatedOrb className="orb-green-light w-72 h-72 bottom-20 right-1/4" delay={4} />
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={takeoffLogo} alt="Takeoff Exports Logo" className="h-12 w-auto" />
+            <img src={takeoffLogo} alt="Takeoff Exports Logo" className="h-12 w-auto rounded-lg" />
+            <span className="font-display font-bold text-xl text-foreground hidden sm:block">Takeoff Exports</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <button 
@@ -85,20 +79,20 @@ const Index = () => {
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8">
-                <Globe className="w-4 h-4" />
-                Premium Export Services from India
-              </span>
+              <img src={takeoffLogo} alt="Takeoff Exports" className="w-32 h-32 mx-auto mb-6 rounded-2xl shadow-lg" />
             </div>
             
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <span className="text-foreground">Your Gateway to</span>
-              <br />
-              <span className="text-gradient">Global Markets</span>
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <span className="text-foreground">Takeoff</span>
+              <span className="text-gradient"> Exports</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              Connecting India's finest products with the world. We handle everything from sourcing to shipping, ensuring your business reaches new horizons.
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-8 animate-fade-up" style={{ animationDelay: '0.25s' }}>
+              "Delivering Quality. Exporting Trust."
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
+              An India-based export company committed to delivering high-quality products to global markets with transparency, consistency, and efficient execution.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
@@ -110,19 +104,12 @@ const Index = () => {
                 Our Services
               </Button>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border/30 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-              <StatCard value="50+" label="Countries Served" />
-              <StatCard value="1000+" label="Happy Clients" />
-              <StatCard value="15+" label="Years Experience" />
-            </div>
           </div>
         </div>
 
-        {/* Floating airplane animation */}
-        <div className="absolute right-10 top-1/3 animate-float opacity-20 hidden lg:block">
-          <Plane className="w-32 h-32 text-primary rotate-45" />
+        {/* Floating rocket animation */}
+        <div className="absolute right-10 top-1/3 animate-float opacity-30 hidden lg:block">
+          <Rocket className="w-32 h-32 text-primary rotate-45" />
         </div>
       </section>
 
@@ -133,17 +120,22 @@ const Index = () => {
             <div className="animate-slide-in-left">
               <span className="text-primary font-medium uppercase tracking-wider text-sm">About Us</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-                Trusted Export Partner <span className="text-gradient">Since 2009</span>
+                Trusted Export Partner <span className="text-gradient">Since 2025</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Takeoff Exports is a leading export company based in India, specializing in connecting Indian manufacturers with global buyers. Our expertise spans multiple industries, ensuring quality products reach markets worldwide.
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Takeoff Exports is an India-based export company committed to delivering high-quality products to global markets. With a strong focus on quality, compliance, and reliability, we ensure every shipment meets international standards and customer expectations.
               </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Our approach is built on transparency, consistency, and efficient execution—making global trade smooth, dependable, and scalable for our partners.
+              </p>
+              
+              <h3 className="font-display text-xl font-bold mb-4 text-foreground">Why Choose Takeoff Exports?</h3>
               <ul className="space-y-4">
                 {[
-                  'Certified quality assurance standards',
-                  'Competitive pricing with transparent quotes',
-                  'End-to-end logistics management',
-                  'Dedicated account management'
+                  'Internationally compliant quality assurance',
+                  'Competitive and transparent pricing',
+                  'End-to-end export and logistics management',
+                  'Dedicated customer and account support'
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3 text-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
@@ -154,11 +146,11 @@ const Index = () => {
             </div>
             <div className="animate-slide-in-right">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-3xl" />
                 <div className="relative bg-card-gradient border border-border/50 rounded-3xl p-10 text-center">
-                  <img src={takeoffLogo} alt="Takeoff Exports" className="w-48 mx-auto mb-6" />
+                  <img src={takeoffLogo} alt="Takeoff Exports" className="w-48 mx-auto mb-6 rounded-2xl" />
                   <h3 className="font-display text-2xl font-bold text-gradient mb-4">Takeoff Exports</h3>
-                  <p className="text-muted-foreground">Your trusted partner in international trade</p>
+                  <p className="text-muted-foreground italic">"Delivering Quality. Exporting Trust."</p>
                 </div>
               </div>
             </div>
@@ -179,26 +171,26 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCard 
               icon={Package} 
-              title="Product Sourcing" 
-              description="Access India's vast manufacturing network for premium quality products at competitive prices."
+              title="Product Portfolio Management" 
+              description="Carefully selected, quality-driven products aligned with global standards and market demand."
               delay={100}
             />
             <ServiceCard 
-              icon={Globe} 
-              title="Market Research" 
-              description="Comprehensive analysis of target markets to identify opportunities and optimize your export strategy."
+              icon={TrendingUp} 
+              title="Market Intelligence" 
+              description="In-depth market insights to help position products effectively and maximize international reach."
               delay={200}
             />
             <ServiceCard 
               icon={Ship} 
-              title="Logistics & Shipping" 
-              description="Complete shipping solutions including documentation, customs clearance, and delivery tracking."
+              title="Logistics & Shipping Solutions" 
+              description="Seamless export operations covering documentation, customs coordination, and real-time shipment tracking."
               delay={300}
             />
             <ServiceCard 
-              icon={Plane} 
-              title="Express Export" 
-              description="Fast-track export services for time-sensitive shipments with guaranteed delivery timelines."
+              icon={Rocket} 
+              title="Express Export Services" 
+              description="Accelerated export handling for time-critical shipments with reliable and committed timelines."
               delay={400}
             />
           </div>
@@ -211,7 +203,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-card-gradient border border-border/50 rounded-3xl p-10 md:p-16 relative overflow-hidden">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
               
               <div className="relative text-center mb-12">
                 <span className="text-primary font-medium uppercase tracking-wider text-sm">Get In Touch</span>
@@ -224,28 +216,28 @@ const Index = () => {
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
-                <a href="mailto:contact@takeoffexports.com" className="flex flex-col items-center p-6 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-colors duration-300 group">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <a href="mailto:contact@takeoffexports.com" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
+                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Email Us</span>
                   <span className="text-foreground font-medium text-sm">contact@takeoffexports.com</span>
                 </a>
                 
-                <a href="tel:+919876543210" className="flex flex-col items-center p-6 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-colors duration-300 group">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <a href="tel:+919876543210" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
+                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Call Us</span>
                   <span className="text-foreground font-medium">+91 98765 43210</span>
                 </a>
                 
-                <div className="flex flex-col items-center p-6 rounded-2xl bg-muted/30 group">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 group">
+                  <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
-                  <span className="text-sm text-muted-foreground mb-1">Visit Us</span>
-                  <span className="text-foreground font-medium text-center text-sm">Mumbai, Maharashtra, India</span>
+                  <span className="text-sm text-muted-foreground mb-1">Location</span>
+                  <span className="text-foreground font-medium text-center text-sm">India</span>
                 </div>
               </div>
               
@@ -265,7 +257,8 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <img src={takeoffLogo} alt="Takeoff Exports" className="h-10 w-auto" />
+              <img src={takeoffLogo} alt="Takeoff Exports" className="h-10 w-auto rounded-lg" />
+              <span className="font-display font-bold text-foreground">Takeoff Exports</span>
             </div>
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Takeoff Exports. All rights reserved.

@@ -6,54 +6,53 @@
 
 @layer base {
   :root {
-    --background: 220 30% 6%;
-    --foreground: 210 40% 98%;
+    --background: 40 90% 55%;
+    --foreground: 152 70% 30%;
 
-    --card: 220 25% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 40 95% 58%;
+    --card-foreground: 152 70% 25%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 40 95% 58%;
+    --popover-foreground: 152 70% 25%;
 
-    --primary: 38 92% 55%;
-    --primary-foreground: 220 30% 6%;
+    --primary: 152 70% 35%;
+    --primary-foreground: 40 100% 95%;
 
-    --secondary: 210 80% 55%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 40 85% 50%;
+    --secondary-foreground: 152 70% 20%;
 
-    --muted: 220 20% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 40 60% 48%;
+    --muted-foreground: 152 40% 25%;
 
-    --accent: 200 85% 60%;
-    --accent-foreground: 220 30% 6%;
+    --accent: 152 65% 40%;
+    --accent-foreground: 40 100% 95%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 100% 95%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 38 92% 55%;
+    --border: 152 50% 40%;
+    --input: 152 50% 40%;
+    --ring: 152 70% 35%;
 
     --radius: 0.75rem;
 
     /* Custom colors */
-    --navy: 220 50% 12%;
-    --sky-light: 200 90% 70%;
-    --sky-dark: 210 80% 50%;
-    --gold: 38 92% 55%;
-    --gold-light: 42 100% 70%;
-    --sunset: 25 90% 55%;
+    --amber: 40 90% 55%;
+    --amber-light: 42 100% 70%;
+    --green: 152 70% 35%;
+    --green-light: 152 60% 50%;
+    --green-dark: 152 80% 25%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 50% 8%) 0%, hsl(210 60% 15%) 50%, hsl(220 50% 12%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(42 100% 65%) 100%);
-    --gradient-sky: linear-gradient(180deg, hsl(200 90% 70%) 0%, hsl(210 80% 50%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 25% 12%) 0%, hsl(220 30% 8%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 90% 55%) 0%, hsl(42 95% 60%) 50%, hsl(38 85% 50%) 100%);
+    --gradient-green: linear-gradient(135deg, hsl(152 70% 35%) 0%, hsl(152 60% 45%) 100%);
+    --gradient-amber: linear-gradient(180deg, hsl(40 90% 55%) 0%, hsl(38 85% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(40 92% 58%) 0%, hsl(38 88% 52%) 100%);
 
     /* Shadows */
-    --shadow-glow: 0 0 60px hsl(38 92% 55% / 0.2);
-    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-button: 0 10px 40px -10px hsl(38 92% 55% / 0.5);
+    --shadow-glow: 0 0 60px hsl(152 70% 35% / 0.3);
+    --shadow-card: 0 25px 50px -12px hsl(152 70% 20% / 0.3);
+    --shadow-button: 0 10px 40px -10px hsl(152 70% 35% / 0.5);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,7 +77,7 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(42 100% 70%) 50%, hsl(25 90% 55%) 100%);
+    background-image: linear-gradient(135deg, hsl(152 80% 25%) 0%, hsl(152 70% 35%) 50%, hsl(152 60% 45%) 100%);
   }
 
   .bg-hero-gradient {
@@ -89,7 +88,7 @@
     background: var(--gradient-card);
   }
 
-  .glow-gold {
+  .glow-green {
     box-shadow: var(--shadow-glow);
   }
 
@@ -204,17 +203,17 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
-.orb-gold {
-  background: hsl(38 92% 55%);
+.orb-green {
+  background: hsl(152 70% 35%);
 }
 
-.orb-sky {
-  background: hsl(200 90% 60%);
+.orb-amber {
+  background: hsl(40 90% 55%);
 }
 
-.orb-sunset {
-  background: hsl(25 90% 55%);
+.orb-green-light {
+  background: hsl(152 60% 50%);
 }
