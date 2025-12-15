@@ -41,12 +41,18 @@
     --purple-light: 270 50% 75%;
     --purple-dark: 270 70% 45%;
     --lavender: 270 40% 90%;
+    
+    /* Dark section colors */
+    --section-dark: 260 35% 15%;
+    --section-dark-foreground: 270 30% 95%;
+    --section-dark-muted: 270 20% 70%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(270 30% 98%) 0%, hsl(270 40% 95%) 50%, hsl(280 35% 93%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(260 35% 12%) 0%, hsl(260 40% 18%) 50%, hsl(270 35% 20%) 100%);
     --gradient-purple: linear-gradient(135deg, hsl(270 60% 60%) 0%, hsl(280 50% 65%) 100%);
     --gradient-lavender: linear-gradient(180deg, hsl(270 30% 98%) 0%, hsl(270 40% 95%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(270 40% 97%) 0%, hsl(270 35% 94%) 100%);
+    --gradient-card-dark: linear-gradient(145deg, hsl(260 30% 20%) 0%, hsl(260 35% 16%) 100%);
 
     /* Shadows */
     --shadow-glow: 0 0 60px hsl(270 60% 60% / 0.2);
@@ -79,12 +85,30 @@
     background-image: linear-gradient(135deg, hsl(270 70% 45%) 0%, hsl(270 60% 55%) 50%, hsl(280 55% 60%) 100%);
   }
 
+  .text-gradient-light {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(270 80% 75%) 0%, hsl(280 70% 80%) 50%, hsl(270 60% 70%) 100%);
+  }
+
   .bg-hero-gradient {
     background: var(--gradient-hero);
   }
 
   .bg-card-gradient {
     background: var(--gradient-card);
+  }
+
+  .bg-card-gradient-dark {
+    background: var(--gradient-card-dark);
+  }
+
+  .section-dark {
+    background: hsl(var(--section-dark));
+    color: hsl(var(--section-dark-foreground));
+  }
+
+  .section-light {
+    background: hsl(var(--background));
   }
 
   .glow-purple {

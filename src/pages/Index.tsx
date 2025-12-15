@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import takeoffLogo from '@/assets/takeoff-logo.png';
 import { Button } from '@/components/ui/button';
-import { Rocket, Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp, Boxes, Tag, Search, Shield, Award } from 'lucide-react';
+import { Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp, Boxes, Tag, Search, Shield, Award, Plane, Container, FileText, Warehouse } from 'lucide-react';
 import WorldMapAnimation from '@/components/WorldMapAnimation';
 import LogisticsAnimation from '@/components/LogisticsAnimation';
 
@@ -18,7 +18,7 @@ const ServiceCard = ({ icon: Icon, title, description, delay }: { icon: any; tit
     style={{ animationDelay: `${delay}ms` }}
   >
     <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors duration-300">
-      <Icon className="w-7 h-7 text-primary" />
+      <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
     </div>
     <h3 className="font-display text-xl font-bold mb-3 text-foreground">{title}</h3>
     <p className="text-muted-foreground leading-relaxed">{description}</p>
@@ -27,16 +27,16 @@ const ServiceCard = ({ icon: Icon, title, description, delay }: { icon: any; tit
 
 const AchievementCard = ({ icon: Icon, title, description, delay }: { icon: any; title: string; description: string; delay: number }) => (
   <div 
-    className="bg-card-gradient border border-border/50 rounded-2xl p-6 hover:border-primary/50 transition-all duration-500 hover:shadow-lg group"
+    className="bg-card-gradient-dark border border-primary/20 rounded-2xl p-6 hover:border-primary/40 transition-all duration-500 hover:shadow-lg group"
     style={{ animationDelay: `${delay}ms` }}
   >
     <div className="flex items-start gap-4">
-      <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
-        <Icon className="w-6 h-6 text-primary" />
+      <div className="w-12 h-12 rounded-xl bg-primary/30 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/40 transition-colors duration-300">
+        <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
       </div>
       <div>
-        <h3 className="font-display text-lg font-bold mb-2 text-foreground">{title}</h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+        <h3 className="font-display text-lg font-bold mb-2 text-white">{title}</h3>
+        <p className="text-white/70 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   </div>
@@ -55,13 +55,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Animated Background */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <AnimatedOrb className="orb-purple w-96 h-96 -top-48 -right-48" delay={0} />
-        <AnimatedOrb className="orb-lavender w-80 h-80 top-1/3 -left-40" delay={2} />
-        <AnimatedOrb className="orb-purple-light w-72 h-72 bottom-20 right-1/4" delay={4} />
-      </div>
-
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -107,24 +100,37 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="container mx-auto px-6 py-20">
+      {/* Hero Section - DARK */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20 bg-hero-gradient overflow-hidden">
+        {/* Background Image Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070')`,
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(260_35%_15%)]" />
+        
+        {/* Animated Orbs */}
+        <AnimatedOrb className="orb-purple w-96 h-96 -top-48 -right-48 opacity-20" delay={0} />
+        <AnimatedOrb className="orb-lavender w-80 h-80 top-1/3 -left-40 opacity-15" delay={2} />
+        
+        <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
               <img src={takeoffLogo} alt="Takeoff Exports" className="w-32 h-32 mx-auto mb-6 rounded-2xl shadow-lg" />
             </div>
             
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <span className="text-foreground">Takeoff</span>
-              <span className="text-gradient"> Exports</span>
+              <span className="text-white">Takeoff</span>
+              <span className="text-gradient-light"> Exports</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-8 animate-fade-up" style={{ animationDelay: '0.25s' }}>
+            <p className="text-xl md:text-2xl text-white/80 font-medium mb-8 animate-fade-up" style={{ animationDelay: '0.25s' }}>
               "Delivering Quality. Exporting Trust."
             </p>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
               An India-based export company committed to delivering high-quality products to global markets with transparency, consistency, and efficient execution.
             </p>
             
@@ -140,29 +146,38 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Floating rocket animation */}
-        <div className="absolute right-10 top-1/3 animate-float opacity-30 hidden lg:block">
-          <Rocket className="w-32 h-32 text-primary rotate-45" />
+        {/* Floating Icons */}
+        <div className="absolute right-10 top-1/3 animate-float opacity-20 hidden lg:block">
+          <Ship className="w-24 h-24 text-primary" strokeWidth={1} />
+        </div>
+        <div className="absolute left-10 bottom-1/3 animate-float opacity-20 hidden lg:block" style={{ animationDelay: '2s' }}>
+          <Plane className="w-20 h-20 text-primary rotate-45" strokeWidth={1} />
         </div>
       </section>
 
-      {/* About Section */}
-      <section ref={aboutRef} className="py-24 relative">
-        <div className="container mx-auto px-6">
+      {/* About Section - DARK */}
+      <section ref={aboutRef} className="py-24 relative section-dark">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070')`,
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-in-left">
               <span className="text-primary font-medium uppercase tracking-wider text-sm">About Us</span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-                Trusted Export Partner <span className="text-gradient">Since 2025</span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
+                Trusted Export Partner <span className="text-gradient-light">Since 2025</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-white/70 text-lg leading-relaxed mb-6">
                 Takeoff Exports is an India-based export company committed to delivering high-quality products to global markets. With a strong focus on quality, compliance, and reliability, we ensure every shipment meets international standards and customer expectations.
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              <p className="text-white/70 text-lg leading-relaxed mb-8">
                 Our approach is built on transparency, consistency, and efficient execution—making global trade smooth, dependable, and scalable for our partners.
               </p>
               
-              <h3 className="font-display text-xl font-bold mb-4 text-foreground">Why Choose Takeoff Exports?</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-white">Why Choose Takeoff Exports?</h3>
               <ul className="space-y-4">
                 {[
                   'Internationally compliant quality assurance',
@@ -170,8 +185,8 @@ const Index = () => {
                   'End-to-end export and logistics management',
                   'Dedicated customer and account support'
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3 text-foreground">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <li key={index} className="flex items-center gap-3 text-white/90">
+                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" strokeWidth={1.5} />
                     {item}
                   </li>
                 ))}
@@ -180,10 +195,10 @@ const Index = () => {
             <div className="animate-slide-in-right">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-3xl" />
-                <div className="relative bg-card-gradient border border-border/50 rounded-3xl p-10 text-center">
+                <div className="relative bg-card-gradient-dark border border-primary/20 rounded-3xl p-10 text-center">
                   <img src={takeoffLogo} alt="Takeoff Exports" className="w-48 mx-auto mb-6 rounded-2xl" />
-                  <h3 className="font-display text-2xl font-bold text-gradient mb-4">Takeoff Exports</h3>
-                  <p className="text-muted-foreground italic">"Delivering Quality. Exporting Trust."</p>
+                  <h3 className="font-display text-2xl font-bold text-gradient-light mb-4">Takeoff Exports</h3>
+                  <p className="text-white/70 italic">"Delivering Quality. Exporting Trust."</p>
                 </div>
               </div>
             </div>
@@ -191,12 +206,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section ref={servicesRef} className="py-24 relative">
+      {/* Services Section - LIGHT */}
+      <section ref={servicesRef} className="py-24 relative section-light">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-primary font-medium uppercase tracking-wider text-sm">What We Do</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
               Our <span className="text-gradient">Export Services</span>
             </h2>
           </div>
@@ -226,7 +241,7 @@ const Index = () => {
               delay={300}
             />
             <ServiceCard 
-              icon={Rocket} 
+              icon={Plane} 
               title="Express Export Services" 
               description="Accelerated export handling for time-critical shipments with reliable and committed timelines."
               delay={400}
@@ -235,12 +250,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Brands Section */}
-      <section ref={brandsRef} className="py-24 relative">
-        <div className="container mx-auto px-6">
+      {/* Brands Section - LIGHT */}
+      <section ref={brandsRef} className="py-24 relative section-light border-t border-border/30">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070')`,
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-primary font-medium uppercase tracking-wider text-sm">~ Our Brands ~</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
               Delivering <span className="text-gradient">Excellence Together</span>
             </h2>
           </div>
@@ -248,7 +269,7 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-card-gradient border border-border/50 rounded-3xl p-12 text-center">
               <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Globe className="w-10 h-10 text-primary" />
+                <Globe className="w-10 h-10 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="font-display text-2xl font-bold text-foreground mb-4">Coming Soon</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -259,15 +280,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section ref={achievementsRef} className="py-24 relative">
-        <div className="container mx-auto px-6">
+      {/* Achievements Section - DARK */}
+      <section ref={achievementsRef} className="py-24 relative section-dark overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')`,
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(260_35%_15%)] via-transparent to-[hsl(260_35%_15%)]" />
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-primary font-medium uppercase tracking-wider text-sm">Achievements</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
-              Customers Prefer Us for <span className="text-gradient">Our Specialties</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-white">
+              Customers Prefer Us for <span className="text-gradient-light">Our Specialties</span>
             </h2>
-            <p className="text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
+            <p className="text-white/60 mt-4 text-lg max-w-2xl mx-auto">
               We Value Unique and Innovative Client Requirements
             </p>
           </div>
@@ -312,17 +341,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section ref={contactRef} className="py-24 relative">
-        <div className="container mx-auto px-6">
+      {/* Contact Section - LIGHT */}
+      <section ref={contactRef} className="py-24 relative section-light">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074')`,
+          }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="bg-card-gradient border border-border/50 rounded-3xl p-10 md:p-16 relative overflow-hidden">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
               
               <div className="relative text-center mb-12">
                 <span className="text-primary font-medium uppercase tracking-wider text-sm">Get In Touch</span>
-                <h2 className="font-display text-4xl md:text-5xl font-bold mt-4">
+                <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
                   Ready to <span className="text-gradient">Take Off?</span>
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
@@ -333,7 +368,7 @@ const Index = () => {
               <div className="grid md:grid-cols-3 gap-8">
                 <a href="mailto:info@takeoffexpoerts.com" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
-                    <Mail className="w-6 h-6 text-primary" />
+                    <Mail className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Email Us</span>
                   <span className="text-foreground font-medium text-sm">info@takeoffexpoerts.com</span>
@@ -341,7 +376,7 @@ const Index = () => {
                 
                 <a href="tel:+919677053103" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
-                    <Phone className="w-6 h-6 text-primary" />
+                    <Phone className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
                   <span className="text-sm text-muted-foreground mb-1">Call Us</span>
                   <span className="text-foreground font-medium">+91 96770 53103</span>
@@ -349,10 +384,10 @@ const Index = () => {
                 
                 <a href="https://maps.app.goo.gl/9Z4d9ay2QE422pVi9" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center p-6 rounded-2xl bg-primary/10 hover:bg-primary/20 transition-colors duration-300 group">
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
-                    <MapPin className="w-6 h-6 text-primary" />
+                    <MapPin className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
-                  <span className="text-sm text-muted-foreground mb-1">Location</span>
-                  <span className="text-foreground font-medium text-center text-sm">Tamil Nadu, India</span>
+                  <span className="text-sm text-muted-foreground mb-1">Visit Us</span>
+                  <span className="text-foreground font-medium">View on Map</span>
                 </a>
               </div>
               
@@ -367,16 +402,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-border/50">
+      {/* Footer - DARK */}
+      <footer className="py-12 section-dark border-t border-primary/20">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <img src={takeoffLogo} alt="Takeoff Exports" className="h-10 w-auto rounded-lg" />
-              <span className="font-display font-bold text-foreground">Takeoff Exports</span>
+              <div>
+                <span className="font-display font-bold text-lg text-white">Takeoff Exports</span>
+                <p className="text-white/50 text-sm">"Delivering Quality. Exporting Trust."</p>
+              </div>
             </div>
-            <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} Takeoff Exports. All rights reserved.
+            <p className="text-white/50 text-sm">
+              © 2025 Takeoff Exports. All rights reserved.
             </p>
           </div>
         </div>
