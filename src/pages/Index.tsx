@@ -161,7 +161,7 @@ const Index = () => {
             <div className="animate-slide-in-left">
               <span className="text-primary font-medium uppercase tracking-wider text-sm">About Us</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
-                Trusted Export Partner <span className="text-gradient-light">Since 2025</span>
+                Trusted <span className="text-gradient-light">Global Export Partner</span>
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
                 Takeoff Exports is an India-based export company committed to delivering high-quality products to global markets. With a strong focus on quality, compliance, and reliability, we ensure every shipment meets international standards and customer expectations.
