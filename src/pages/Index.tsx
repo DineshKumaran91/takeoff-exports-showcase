@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import takeoffLogo from '@/assets/takeoff-logo.png';
 import { Button } from '@/components/ui/button';
 import { Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp, Boxes, Tag, Search, Shield, Award, Plane, MessageCircle } from 'lucide-react';
@@ -31,6 +32,7 @@ const AchievementCard = ({ icon: Icon, title, description, delay }: { icon: any;
 );
 
 const Index = () => {
+  const { t } = useTranslation();
   const servicesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const brandsRef = useRef<HTMLDivElement>(null);
@@ -60,35 +62,35 @@ const Index = () => {
               onClick={() => scrollToSection(aboutRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              About
+              {t('nav.about')}
             </button>
             <button 
               onClick={() => scrollToSection(servicesRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              Services
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection(brandsRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              Brands
+              {t('nav.brands')}
             </button>
             <button 
               onClick={() => scrollToSection(achievementsRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              Achievements
+              {t('nav.achievements')}
             </button>
             <button 
               onClick={() => scrollToSection(contactRef)} 
               className="text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              Contact
+              {t('nav.contact')}
             </button>
           </div>
           <Button variant="hero" size="sm" onClick={() => scrollToSection(contactRef)}>
-            Get Quote
+            {t('nav.getQuote')}
           </Button>
         </div>
       </nav>
@@ -120,20 +122,20 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 font-medium mb-8 animate-fade-up" style={{ animationDelay: '0.25s' }}>
-              "Delivering Quality. Exporting Trust."
+              "{t('hero.tagline')}"
             </p>
             
             <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10 animate-fade-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              An India-based export company committed to delivering high-quality products to global markets with transparency, consistency, and efficient execution.
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <Button variant="hero" size="lg" onClick={() => scrollToSection(contactRef)}>
-                Start Exporting
+                {t('hero.startExporting')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
               <Button variant="hero-outline" size="lg" onClick={() => scrollToSection(servicesRef)}>
-                Our Services
+                {t('hero.ourServices')}
               </Button>
             </div>
           </div>
@@ -159,28 +161,23 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-slide-in-left">
-              <span className="text-primary font-medium uppercase tracking-wider text-sm">About Us</span>
+              <span className="text-primary font-medium uppercase tracking-wider text-sm">{t('about.label')}</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6 text-white">
-                Trusted <span className="text-gradient-light">Global Export Partner</span>
+                {t('about.title')} <span className="text-gradient-light">{t('about.titleHighlight')}</span>
               </h2>
               <p className="text-white/70 text-lg leading-relaxed mb-6">
-                Takeoff Exports is an India-based export company committed to delivering high-quality products to global markets. With a strong focus on quality, compliance, and reliability, we ensure every shipment meets international standards and customer expectations.
+                {t('about.description1')}
               </p>
               <p className="text-white/70 text-lg leading-relaxed mb-8">
-                Our approach is built on transparency, consistency, and efficient execution—making global trade smooth, dependable, and scalable for our partners.
+                {t('about.description2')}
               </p>
               
-              <h3 className="font-display text-xl font-bold mb-4 text-white">Why Choose Takeoff Exports?</h3>
+              <h3 className="font-display text-xl font-bold mb-4 text-white">{t('about.whyChoose')}</h3>
               <ul className="space-y-4">
-                {[
-                  'Internationally compliant quality assurance',
-                  'Competitive and transparent pricing',
-                  'End-to-end export and logistics management',
-                  'Dedicated customer and account support'
-                ].map((item, index) => (
+                {['quality', 'pricing', 'logistics', 'support'].map((key, index) => (
                   <li key={index} className="flex items-center gap-3 text-white/90">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" strokeWidth={1.5} />
-                    {item}
+                    {t(`about.reasons.${key}`)}
                   </li>
                 ))}
               </ul>
@@ -191,7 +188,7 @@ const Index = () => {
                 <div className="relative bg-card-gradient-dark border border-primary/20 rounded-3xl p-10 text-center">
                   <img src={takeoffLogo} alt="Takeoff Exports" className="w-48 mx-auto mb-6 rounded-2xl" />
                   <h3 className="font-display text-2xl font-bold text-gradient-light mb-4">Takeoff Exports</h3>
-                  <p className="text-white/70 italic">"Delivering Quality. Exporting Trust."</p>
+                  <p className="text-white/70 italic">"{t('hero.tagline')}"</p>
                 </div>
               </div>
             </div>
@@ -203,35 +200,35 @@ const Index = () => {
       <section ref={servicesRef} className="py-24 relative section-light">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">What We Do</span>
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">{t('services.label')}</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
-              Our <span className="text-gradient">Export Services</span>
+              {t('services.title')} <span className="text-gradient">{t('services.titleHighlight')}</span>
             </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             <ServiceImageCard 
               icon={Package} 
-              title="Product Portfolio Management" 
-              description="Carefully selected, quality-driven products aligned with global standards and market demand."
+              title={t('services.portfolio.title')} 
+              description={t('services.portfolio.description')}
               imageUrl="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
             />
             <ServiceImageCard 
               icon={TrendingUp} 
-              title="Market Intelligence" 
-              description="In-depth market insights to help position products effectively and maximize international reach."
+              title={t('services.market.title')} 
+              description={t('services.market.description')}
               imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072"
             />
             <ServiceImageCard 
               icon={Ship} 
-              title="Logistics & Shipping Solutions" 
-              description="Seamless export operations covering documentation, customs coordination, and real-time shipment tracking."
+              title={t('services.logistics.title')} 
+              description={t('services.logistics.description')}
               imageUrl="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070"
             />
             <ServiceImageCard 
               icon={Plane} 
-              title="Express Export Services" 
-              description="Accelerated export handling for time-critical shipments with reliable and committed timelines."
+              title={t('services.express.title')} 
+              description={t('services.express.description')}
               imageUrl="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074"
             />
           </div>
@@ -248,9 +245,9 @@ const Index = () => {
         />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">~ Our Brands ~</span>
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">{t('brands.label')}</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
-              Delivering <span className="text-gradient">Excellence Together</span>
+              {t('brands.title')} <span className="text-gradient">{t('brands.titleHighlight')}</span>
             </h2>
           </div>
           
@@ -259,9 +256,9 @@ const Index = () => {
               <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Globe className="w-10 h-10 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">Coming Soon</h3>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">{t('brands.comingSoon')}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We're building partnerships with exceptional brands to bring you the best products from India to the world. Stay tuned for our brand portfolio.
+                {t('brands.description')}
               </p>
             </div>
           </div>
@@ -280,12 +277,12 @@ const Index = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-primary font-medium uppercase tracking-wider text-sm">Achievements</span>
+            <span className="text-primary font-medium uppercase tracking-wider text-sm">{t('achievements.label')}</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-white">
-              Customers Prefer Us for <span className="text-gradient-light">Our Specialties</span>
+              {t('achievements.title')} <span className="text-gradient-light">{t('achievements.titleHighlight')}</span>
             </h2>
             <p className="text-white/60 mt-4 text-lg max-w-2xl mx-auto">
-              We Value Unique and Innovative Client Requirements
+              {t('achievements.subtitle')}
             </p>
           </div>
           
@@ -297,32 +294,32 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-6">
             <AchievementCard 
               icon={Boxes} 
-              title="Multi-Product Consolidation Expertise" 
-              description="We specialize in handling complex shipments, managing over 100 different products in a single container or LCL shipment with precision and care."
+              title={t('achievements.multiProduct.title')} 
+              description={t('achievements.multiProduct.description')}
               delay={100}
             />
             <AchievementCard 
               icon={Tag} 
-              title="Customized Packaging & Labeling" 
-              description="Tailor-made packaging and labeling solutions designed to meet country-specific regulations and client preferences."
+              title={t('achievements.packaging.title')} 
+              description={t('achievements.packaging.description')}
               delay={200}
             />
             <AchievementCard 
               icon={Search} 
-              title="New & Custom Product Sourcing" 
-              description="Looking for something new or different? Share your product list with us. We identify suitable products at your target price and export them under your brand name."
+              title={t('achievements.sourcing.title')} 
+              description={t('achievements.sourcing.description')}
               delay={300}
             />
             <AchievementCard 
               icon={Shield} 
-              title="Integrity & Transparency" 
-              description="We are committed to ethical practices, honesty, and complete transparency in every transaction."
+              title={t('achievements.integrity.title')} 
+              description={t('achievements.integrity.description')}
               delay={400}
             />
             <AchievementCard 
               icon={Award} 
-              title="Pursuit of Excellence" 
-              description="Driven by continuous improvement, we strive to enhance our processes, services, and product quality to deliver exceptional value."
+              title={t('achievements.excellence.title')} 
+              description={t('achievements.excellence.description')}
               delay={500}
             />
           </div>
@@ -344,12 +341,12 @@ const Index = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
               
               <div className="relative text-center mb-12">
-                <span className="text-primary font-medium uppercase tracking-wider text-sm">Get In Touch</span>
+                <span className="text-primary font-medium uppercase tracking-wider text-sm">{t('contact.label')}</span>
                 <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 text-foreground">
-                  Ready to <span className="text-gradient">Take Off?</span>
+                  {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span>
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-                  Contact us today for a free consultation and discover how we can help expand your business globally.
+                  {t('contact.description')}
                 </p>
               </div>
               
@@ -358,7 +355,7 @@ const Index = () => {
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <Mail className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
-                  <span className="text-sm text-muted-foreground mb-1">Email Us</span>
+                  <span className="text-sm text-muted-foreground mb-1">{t('contact.email')}</span>
                   <span className="text-foreground font-medium text-sm">info@takeoffexports.com</span>
                 </a>
                 
@@ -369,7 +366,7 @@ const Index = () => {
                       <MessageCircle className="w-4 h-4 text-primary" strokeWidth={1.5} />
                     </div>
                   </div>
-                  <span className="text-sm text-muted-foreground mb-1">Call / WhatsApp</span>
+                  <span className="text-sm text-muted-foreground mb-1">{t('contact.phone')}</span>
                   <span className="text-foreground font-medium">+91 96770 53103</span>
                 </a>
                 
@@ -377,7 +374,7 @@ const Index = () => {
                   <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                     <MapPin className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
-                  <span className="text-sm text-muted-foreground mb-1">Visit Us</span>
+                  <span className="text-sm text-muted-foreground mb-1">{t('contact.address')}</span>
                   <span className="text-foreground font-medium text-center text-xs leading-relaxed">
                     77/46 E2, Old Post Office Street,<br />
                     Usilampatti, Madurai DT – 625532
@@ -387,7 +384,7 @@ const Index = () => {
               
               <div className="mt-10 text-center">
                 <Button variant="hero" size="lg">
-                  Request Free Quote
+                  {t('contact.requestQuote')}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </div>
@@ -404,11 +401,11 @@ const Index = () => {
               <img src={takeoffLogo} alt="Takeoff Exports" className="h-10 w-auto rounded-lg" />
               <div>
                 <span className="font-display font-bold text-lg text-white">Takeoff Exports</span>
-                <p className="text-white/50 text-sm">"Delivering Quality. Exporting Trust."</p>
+                <p className="text-white/50 text-sm">"{t('footer.tagline')}"</p>
               </div>
             </div>
             <p className="text-white/50 text-sm">
-              © 2025 Takeoff Exports. All rights reserved.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>
