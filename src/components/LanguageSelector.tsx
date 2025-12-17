@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 type Language = {
   code: string;
@@ -12,23 +13,40 @@ const languages: Language[] = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+  { code: 'pt', name: 'Português', flag: '🇧🇷' },
   { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+  { code: 'zh-CN', name: '简体中文', flag: '🇨🇳' },
+  { code: 'zh-TW', name: '繁體中文', flag: '🇹🇼' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷' },
   { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+  { code: 'ta', name: 'தமிழ்', flag: '🇮🇳' },
+  { code: 'bn', name: 'বাংলা', flag: '🇧🇩' },
+  { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' },
+  { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
+  { code: 'th', name: 'ไทย', flag: '🇹🇭' },
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
+  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
+  { code: 'ms', name: 'Bahasa Melayu', flag: '🇲🇾' },
+  { code: 'fil', name: 'Filipino', flag: '🇵🇭' },
+  { code: 'sw', name: 'Kiswahili', flag: '🇰🇪' },
 ];
 
-interface LanguageSelectorProps {
-  onLanguageChange?: (code: string) => void;
-}
-
-const LanguageSelector = ({ onLanguageChange }: LanguageSelectorProps) => {
+const LanguageSelector = () => {
+  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState<Language>(languages[0]);
+  const [selected, setSelected] = useState<Language>(
+    languages.find(l => l.code === i18n.language) || languages[0]
+  );
 
   const handleSelect = (lang: Language) => {
     setSelected(lang);
     setIsOpen(false);
-    onLanguageChange?.(lang.code);
+    i18n.changeLanguage(lang.code);
   };
 
   return (
@@ -45,7 +63,7 @@ const LanguageSelector = ({ onLanguageChange }: LanguageSelectorProps) => {
       {isOpen && (
         <>
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-full left-0 mt-2 z-50 bg-background border border-border rounded-lg shadow-lg overflow-hidden min-w-[150px]">
+          <div className="absolute top-full left-0 mt-2 z-50 bg-background border border-border rounded-lg shadow-lg overflow-hidden min-w-[180px] max-h-[300px] overflow-y-auto">
             {languages.map((lang) => (
               <button
                 key={lang.code}
