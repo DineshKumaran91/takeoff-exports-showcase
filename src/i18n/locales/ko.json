@@ -91,6 +91,20 @@
     "address": "방문하기",
     "requestQuote": "무료 견적 요청"
   },
+  "quoteForm": {
+    "title": "무료 견적 요청",
+    "namePlaceholder": "이름",
+    "mobilePlaceholder": "휴대폰 번호",
+    "emailPlaceholder": "이메일 주소",
+    "messagePlaceholder": "메시지",
+    "submit": "제출",
+    "submitting": "제출 중...",
+    "success": "감사합니다!",
+    "successMessage": "곧 연락드리겠습니다.",
+    "error": "오류",
+    "fillRequired": "모든 필수 항목을 입력해주세요.",
+    "invalidEmail": "유효한 이메일 주소를 입력해주세요."
+  },
   "footer": {
     "tagline": "품질 배송. 신뢰 수출.",
     "copyright": "© 2025 Takeoff Exports. 모든 권리 보유."

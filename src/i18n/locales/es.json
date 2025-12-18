@@ -91,6 +91,20 @@
     "address": "Visítanos",
     "requestQuote": "Solicitar Cotización Gratis"
   },
+  "quoteForm": {
+    "title": "Solicitar Cotización Gratis",
+    "namePlaceholder": "Nombre",
+    "mobilePlaceholder": "Número de Móvil",
+    "emailPlaceholder": "Correo Electrónico",
+    "messagePlaceholder": "Mensaje",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "success": "¡Gracias!",
+    "successMessage": "Nos pondremos en contacto pronto.",
+    "error": "Error",
+    "fillRequired": "Por favor complete todos los campos requeridos.",
+    "invalidEmail": "Por favor ingrese un correo electrónico válido."
+  },
   "footer": {
     "tagline": "Entregando Calidad. Exportando Confianza.",
     "copyright": "© 2025 Takeoff Exports. Todos los derechos reservados."

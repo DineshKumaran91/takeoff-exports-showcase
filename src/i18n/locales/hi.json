@@ -91,6 +91,20 @@
     "address": "हमसे मिलें",
     "requestQuote": "मुफ्त कोटेशन का अनुरोध करें"
   },
+  "quoteForm": {
+    "title": "मुफ्त कोटेशन का अनुरोध करें",
+    "namePlaceholder": "नाम",
+    "mobilePlaceholder": "मोबाइल नंबर",
+    "emailPlaceholder": "ईमेल आईडी",
+    "messagePlaceholder": "संदेश",
+    "submit": "जमा करें",
+    "submitting": "जमा हो रहा है...",
+    "success": "धन्यवाद!",
+    "successMessage": "हम जल्द ही आपसे संपर्क करेंगे।",
+    "error": "त्रुटि",
+    "fillRequired": "कृपया सभी आवश्यक फ़ील्ड भरें।",
+    "invalidEmail": "कृपया एक वैध ईमेल पता दर्ज करें।"
+  },
   "footer": {
     "tagline": "गुणवत्ता वितरण। विश्वास निर्यात।",
     "copyright": "© 2025 Takeoff Exports. सर्वाधिकार सुरक्षित।"

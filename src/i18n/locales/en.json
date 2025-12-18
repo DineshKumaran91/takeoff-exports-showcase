@@ -91,6 +91,20 @@
     "address": "Visit Us",
     "requestQuote": "Request Free Quote"
   },
+  "quoteForm": {
+    "title": "Request Free Quote",
+    "namePlaceholder": "Name",
+    "mobilePlaceholder": "Mobile Number",
+    "emailPlaceholder": "Email ID",
+    "messagePlaceholder": "Message",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Thank You!",
+    "successMessage": "We will contact you shortly.",
+    "error": "Error",
+    "fillRequired": "Please fill in all required fields.",
+    "invalidEmail": "Please enter a valid email address."
+  },
   "footer": {
     "tagline": "Delivering Quality. Exporting Trust.",
     "copyright": "© 2025 Takeoff Exports. All rights reserved."

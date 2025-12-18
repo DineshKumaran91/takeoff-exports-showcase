@@ -91,6 +91,20 @@
     "address": "زورنا",
     "requestQuote": "اطلب عرض أسعار مجاني"
   },
+  "quoteForm": {
+    "title": "اطلب عرض أسعار مجاني",
+    "namePlaceholder": "الاسم",
+    "mobilePlaceholder": "رقم الجوال",
+    "emailPlaceholder": "البريد الإلكتروني",
+    "messagePlaceholder": "الرسالة",
+    "submit": "إرسال",
+    "submitting": "جاري الإرسال...",
+    "success": "شكراً لك!",
+    "successMessage": "سنتواصل معك قريباً.",
+    "error": "خطأ",
+    "fillRequired": "يرجى ملء جميع الحقول المطلوبة.",
+    "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح."
+  },
   "footer": {
     "tagline": "تقديم الجودة. تصدير الثقة.",
     "copyright": "© 2025 Takeoff Exports. جميع الحقوق محفوظة."

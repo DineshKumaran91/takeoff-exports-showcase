@@ -91,6 +91,20 @@
     "address": "எங்களை சந்தியுங்கள்",
     "requestQuote": "இலவச விலை நிர்ணயம் கோருங்கள்"
   },
+  "quoteForm": {
+    "title": "இலவச விலை நிர்ணயம் கோருங்கள்",
+    "namePlaceholder": "பெயர்",
+    "mobilePlaceholder": "மொபைல் எண்",
+    "emailPlaceholder": "மின்னஞ்சல் முகவரி",
+    "messagePlaceholder": "செய்தி",
+    "submit": "சமர்ப்பி",
+    "submitting": "சமர்ப்பிக்கிறது...",
+    "success": "நன்றி!",
+    "successMessage": "விரைவில் தொடர்பு கொள்வோம்.",
+    "error": "பிழை",
+    "fillRequired": "அனைத்து தேவையான புலங்களையும் நிரப்பவும்.",
+    "invalidEmail": "சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்."
+  },
   "footer": {
     "tagline": "தரத்தை வழங்குகிறோம். நம்பிக்கையை ஏற்றுமதி செய்கிறோம்.",
     "copyright": "© 2025 Takeoff Exports. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."

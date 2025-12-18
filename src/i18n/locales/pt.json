@@ -91,6 +91,20 @@
     "address": "Visite-nos",
     "requestQuote": "Solicitar Orçamento Grátis"
   },
+  "quoteForm": {
+    "title": "Solicitar Orçamento Grátis",
+    "namePlaceholder": "Nome",
+    "mobilePlaceholder": "Número de Celular",
+    "emailPlaceholder": "E-mail",
+    "messagePlaceholder": "Mensagem",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "success": "Obrigado!",
+    "successMessage": "Entraremos em contato em breve.",
+    "error": "Erro",
+    "fillRequired": "Por favor, preencha todos os campos obrigatórios.",
+    "invalidEmail": "Por favor, insira um e-mail válido."
+  },
   "footer": {
     "tagline": "Entregando Qualidade. Exportando Confiança.",
     "copyright": "© 2025 Takeoff Exports. Todos os direitos reservados."

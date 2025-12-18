@@ -91,6 +91,20 @@
     "address": "訪問する",
     "requestQuote": "無料見積りを依頼"
   },
+  "quoteForm": {
+    "title": "無料見積りを依頼",
+    "namePlaceholder": "お名前",
+    "mobilePlaceholder": "携帯電話番号",
+    "emailPlaceholder": "メールアドレス",
+    "messagePlaceholder": "メッセージ",
+    "submit": "送信",
+    "submitting": "送信中...",
+    "success": "ありがとうございます！",
+    "successMessage": "まもなくご連絡いたします。",
+    "error": "エラー",
+    "fillRequired": "すべての必須項目を入力してください。",
+    "invalidEmail": "有効なメールアドレスを入力してください。"
+  },
   "footer": {
     "tagline": "品質をお届け。信頼を輸出。",
     "copyright": "© 2025 Takeoff Exports. 全著作権所有。"
