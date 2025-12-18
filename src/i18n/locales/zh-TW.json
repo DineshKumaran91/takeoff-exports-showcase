@@ -91,6 +91,20 @@
     "address": "訪問我們",
     "requestQuote": "請求免費報價"
   },
+  "quoteForm": {
+    "title": "請求免費報價",
+    "namePlaceholder": "姓名",
+    "mobilePlaceholder": "手機號碼",
+    "emailPlaceholder": "電子郵箱",
+    "messagePlaceholder": "留言",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "success": "謝謝！",
+    "successMessage": "我們將盡快與您聯繫。",
+    "error": "錯誤",
+    "fillRequired": "請填寫所有必填欄位。",
+    "invalidEmail": "請輸入有效的電子郵箱地址。"
+  },
   "footer": {
     "tagline": "交付品質。出口信任。",
     "copyright": "© 2025 Takeoff Exports. 保留所有權利。"

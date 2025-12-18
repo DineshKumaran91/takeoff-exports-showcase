@@ -91,6 +91,20 @@
     "address": "Besuchen Sie Uns",
     "requestQuote": "Kostenloses Angebot Anfordern"
   },
+  "quoteForm": {
+    "title": "Kostenloses Angebot Anfordern",
+    "namePlaceholder": "Name",
+    "mobilePlaceholder": "Handynummer",
+    "emailPlaceholder": "E-Mail-Adresse",
+    "messagePlaceholder": "Nachricht",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet...",
+    "success": "Vielen Dank!",
+    "successMessage": "Wir werden Sie in Kürze kontaktieren.",
+    "error": "Fehler",
+    "fillRequired": "Bitte füllen Sie alle erforderlichen Felder aus.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+  },
   "footer": {
     "tagline": "Qualität Liefern. Vertrauen Exportieren.",
     "copyright": "© 2025 Takeoff Exports. Alle Rechte vorbehalten."

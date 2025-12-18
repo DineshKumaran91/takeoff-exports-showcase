@@ -91,6 +91,20 @@
     "address": "Visitaci",
     "requestQuote": "Richiedi Preventivo Gratuito"
   },
+  "quoteForm": {
+    "title": "Richiedi Preventivo Gratuito",
+    "namePlaceholder": "Nome",
+    "mobilePlaceholder": "Numero di Cellulare",
+    "emailPlaceholder": "Indirizzo Email",
+    "messagePlaceholder": "Messaggio",
+    "submit": "Invia",
+    "submitting": "Invio in corso...",
+    "success": "Grazie!",
+    "successMessage": "Ti contatteremo presto.",
+    "error": "Errore",
+    "fillRequired": "Compila tutti i campi obbligatori.",
+    "invalidEmail": "Inserisci un indirizzo email valido."
+  },
   "footer": {
     "tagline": "Consegnare Qualità. Esportare Fiducia.",
     "copyright": "© 2025 Takeoff Exports. Tutti i diritti riservati."

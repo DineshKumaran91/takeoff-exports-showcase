@@ -91,6 +91,20 @@
     "address": "访问我们",
     "requestQuote": "请求免费报价"
   },
+  "quoteForm": {
+    "title": "请求免费报价",
+    "namePlaceholder": "姓名",
+    "mobilePlaceholder": "手机号码",
+    "emailPlaceholder": "电子邮箱",
+    "messagePlaceholder": "留言",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "success": "谢谢！",
+    "successMessage": "我们将尽快与您联系。",
+    "error": "错误",
+    "fillRequired": "请填写所有必填字段。",
+    "invalidEmail": "请输入有效的电子邮箱地址。"
+  },
   "footer": {
     "tagline": "交付品质。出口信任。",
     "copyright": "© 2025 Takeoff Exports. 保留所有权利。"

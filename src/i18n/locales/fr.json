@@ -91,6 +91,20 @@
     "address": "Visitez-Nous",
     "requestQuote": "Demander un Devis Gratuit"
   },
+  "quoteForm": {
+    "title": "Demander un Devis Gratuit",
+    "namePlaceholder": "Nom",
+    "mobilePlaceholder": "Numéro de Mobile",
+    "emailPlaceholder": "Adresse Email",
+    "messagePlaceholder": "Message",
+    "submit": "Soumettre",
+    "submitting": "Envoi en cours...",
+    "success": "Merci!",
+    "successMessage": "Nous vous contacterons bientôt.",
+    "error": "Erreur",
+    "fillRequired": "Veuillez remplir tous les champs requis.",
+    "invalidEmail": "Veuillez entrer une adresse email valide."
+  },
   "footer": {
     "tagline": "Livrer la Qualité. Exporter la Confiance.",
     "copyright": "© 2025 Takeoff Exports. Tous droits réservés."
