@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import takeoffLogo from '@/assets/takeoff-logo.png';
 import { Button } from '@/components/ui/button';
@@ -6,7 +6,17 @@ import { Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, Tr
 import LogisticsAnimation from '@/components/LogisticsAnimation';
 import ServiceImageCard from '@/components/ServiceImageCard';
 import LanguageSelector from '@/components/LanguageSelector';
-import QuoteRequestModal from '@/components/QuoteRequestModal';
+
+const WHATSAPP_NUMBER = '919677053103';
+const WHATSAPP_MESSAGE = `Hello Takeoff Exports,
+
+I would like to request a free quote.
+Please get in touch with me.`;
+
+const openWhatsApp = () => {
+  const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+};
 
 const AnimatedOrb = ({ className, delay = 0 }: { className: string; delay?: number }) => (
   <div 
@@ -34,7 +44,6 @@ const AchievementCard = ({ icon: Icon, title, description, delay }: { icon: any;
 
 const Index = () => {
   const { t } = useTranslation();
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const brandsRef = useRef<HTMLDivElement>(null);
@@ -385,7 +394,7 @@ const Index = () => {
               </div>
               
               <div className="mt-10 text-center">
-                <Button variant="hero" size="lg" onClick={() => setIsQuoteModalOpen(true)}>
+                <Button variant="hero" size="lg" onClick={openWhatsApp}>
                   {t('contact.requestQuote')}
                   <ArrowRight className="w-5 h-5" />
                 </Button>
@@ -412,12 +421,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-
-      {/* Quote Request Modal */}
-      <QuoteRequestModal 
-        isOpen={isQuoteModalOpen} 
-        onClose={() => setIsQuoteModalOpen(false)} 
-      />
     </div>
   );
 };
