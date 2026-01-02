@@ -145,7 +145,7 @@ const Index = () => {
                 {t('hero.startExporting')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
-              <Button variant="hero-outline" size="lg" onClick={() => scrollToSection(servicesRef)}>
+              <Button variant="hero" size="lg" onClick={() => scrollToSection(servicesRef)}>
                 {t('hero.ourServices')}
               </Button>
             </div>
