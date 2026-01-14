@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import takeoffLogo from '@/assets/takeoff-logo.png';
+import pacyaFruitsLogo from '@/assets/pacya-fruits-logo.png';
 import { Button } from '@/components/ui/button';
 import { Globe, Package, Ship, Mail, Phone, MapPin, ArrowRight, CheckCircle2, TrendingUp, Boxes, Tag, Search, Shield, Award, Plane, MessageCircle } from 'lucide-react';
 import LogisticsAnimation from '@/components/LogisticsAnimation';
@@ -262,8 +263,27 @@ const Index = () => {
             </h2>
           </div>
           
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-card-gradient border border-border/50 rounded-3xl p-12 text-center">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* PacYa Fruits - Active Brand */}
+            <a 
+              href="https://www.pacyafruits.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-card-gradient border border-border/50 rounded-3xl p-8 text-center group cursor-pointer hover:border-primary/50 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="overflow-hidden rounded-2xl mb-6">
+                <img 
+                  src={pacyaFruitsLogo} 
+                  alt="PacYa Fruits" 
+                  className="w-48 h-48 object-contain mx-auto group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-2">PacYa Fruits</h3>
+              <p className="text-primary text-sm font-medium">Visit Website →</p>
+            </a>
+            
+            {/* Coming Soon */}
+            <div className="bg-card-gradient border border-border/50 rounded-3xl p-8 text-center">
               <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Globe className="w-10 h-10 text-primary" strokeWidth={1.5} />
               </div>
