@@ -424,6 +424,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Footer Signature - TAKEOFF Branding */}
+      <div className="relative py-20 section-dark overflow-hidden">
+        {/* Watercolor Background Effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Light blue watercolor blobs */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[100px] opacity-40"></div>
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[hsl(200_60%_70%/0.15)] rounded-full blur-[80px] opacity-50"></div>
+          <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[500px] h-64 bg-[hsl(190_50%_60%/0.1)] rounded-full blur-[120px] opacity-30"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col items-center justify-center text-center">
+            {/* Large TAKEOFF Text */}
+            <h2 
+              className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] font-extrabold tracking-[0.15em] md:tracking-[0.2em] text-transparent bg-clip-text opacity-80"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, hsl(200 70% 75% / 0.6) 0%, hsl(210 60% 85% / 0.4) 50%, hsl(190 50% 70% / 0.5) 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              TAKEOFF
+            </h2>
+            
+            {/* Logo overlapping slightly */}
+            <div className="relative -mt-6 md:-mt-10">
+              <img 
+                src={takeoffLogo} 
+                alt="Takeoff Exports" 
+                className="h-16 md:h-24 w-auto rounded-xl opacity-90 drop-shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Footer - DARK */}
       <footer className="py-12 section-dark border-t border-primary/20">
         <div className="container mx-auto px-6">
