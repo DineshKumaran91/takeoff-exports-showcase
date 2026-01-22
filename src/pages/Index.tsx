@@ -435,10 +435,11 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col items-center justify-center text-center">
+          {/* Horizontal flex container for TAKEOFF + Logo */}
+          <div className="flex flex-row items-center justify-center gap-4 md:gap-8">
             {/* Large TAKEOFF Text */}
             <h2 
-              className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] font-extrabold tracking-[0.15em] md:tracking-[0.2em] text-transparent bg-clip-text opacity-80"
+              className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-extrabold tracking-[0.1em] md:tracking-[0.15em] text-transparent bg-clip-text opacity-80"
               style={{
                 backgroundImage: 'linear-gradient(135deg, hsl(200 70% 75% / 0.6) 0%, hsl(210 60% 85% / 0.4) 50%, hsl(190 50% 70% / 0.5) 100%)',
                 WebkitBackgroundClip: 'text',
@@ -448,14 +449,12 @@ const Index = () => {
               TAKEOFF
             </h2>
             
-            {/* Logo overlapping slightly */}
-            <div className="relative -mt-6 md:-mt-10">
-              <img 
-                src={takeoffLogo} 
-                alt="Takeoff Exports" 
-                className="h-16 md:h-24 w-auto rounded-xl opacity-90 drop-shadow-lg"
-              />
-            </div>
+            {/* Logo inline to the right */}
+            <img 
+              src={takeoffLogo} 
+              alt="Takeoff Exports" 
+              className="h-12 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto rounded-xl opacity-90 drop-shadow-lg"
+            />
           </div>
         </div>
       </div>
