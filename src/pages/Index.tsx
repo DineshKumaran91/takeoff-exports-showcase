@@ -458,24 +458,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer - DARK */}
-      <footer className="py-12 section-dark border-t border-primary/20">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <img src={takeoffLogo} alt="Takeoff Exports" className="h-10 w-auto rounded-lg" />
-              <div>
-                <span className="font-display font-bold text-lg text-white">Takeoff Exports</span>
-                <p className="text-white/50 text-sm">"{t('footer.tagline')}"</p>
-              </div>
-            </div>
-            <p className="text-white/50 text-sm">
-              {t('footer.copyright')}
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
