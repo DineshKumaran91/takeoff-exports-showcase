@@ -424,8 +424,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer Signature - TAKEOFF Branding */}
-      <div className="relative py-20 section-dark overflow-hidden">
+      {/* Footer Signature - TAKEOFF Branding - Final Page Element */}
+      <div className="relative py-12 md:py-16 pb-8 md:pb-12 section-dark overflow-hidden">
         {/* Watercolor Background Effect */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Light blue watercolor blobs */}
